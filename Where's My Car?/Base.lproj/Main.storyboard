@@ -25,7 +25,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6hc-QU-TFq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK6-hZ-6qD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK6-hZ-6qD" customClass="RoundButton" customModule="Where_s_My_Car_" customModuleProvider="target">
                                 <rect key="frame" x="149.5" y="562" width="75" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -34,7 +34,7 @@
                                 </constraints>
                                 <state key="normal" image="parkCar"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="park.ly-logo" translatesAutoresizingMaskIntoConstraints="NO" id="io8-Bt-Tf0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="park.ly-logo" translatesAutoresizingMaskIntoConstraints="NO" id="io8-Bt-Tf0" customClass="ShadowedLabel" customModule="Where_s_My_Car_" customModuleProvider="target">
                                 <rect key="frame" x="16" y="20" width="343" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="T7B-Nj-cGR"/>
