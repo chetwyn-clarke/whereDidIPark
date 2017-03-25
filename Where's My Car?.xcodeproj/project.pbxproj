@@ -15,6 +15,7 @@
 		73B2B35D1E83EB5D007A9CC6 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B2B35C1E83EB5D007A9CC6 /* RoundButton.swift */; };
 		73D4A4E81E84ACF600580578 /* ShadowedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4A4E71E84ACF600580578 /* ShadowedLabel.swift */; };
 		73D4A4EA1E84ADD400580578 /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4A4E91E84ADD400580578 /* ParkingSpot.swift */; };
+		73D4A4ED1E85F9A400580578 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4A4EC1E85F9A400580578 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		73B2B35C1E83EB5D007A9CC6 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		73D4A4E71E84ACF600580578 /* ShadowedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowedLabel.swift; sourceTree = "<group>"; };
 		73D4A4E91E84ADD400580578 /* ParkingSpot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpot.swift; sourceTree = "<group>"; };
+		73D4A4EC1E85F9A400580578 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +62,11 @@
 		73B2B3461E83E5F9007A9CC6 /* Where's My Car? */ = {
 			isa = PBXGroup;
 			children = (
+				73D4A4EB1E85F98A00580578 /* Services */,
 				73B2B35B1E83EB13007A9CC6 /* Model */,
 				73B2B35A1E83EB0D007A9CC6 /* View */,
 				73B2B3591E83EB05007A9CC6 /* Controller */,
 				73B2B3471E83E5F9007A9CC6 /* AppDelegate.swift */,
-				73B2B3491E83E5F9007A9CC6 /* ViewController.swift */,
 				73B2B34B1E83E5F9007A9CC6 /* Main.storyboard */,
 				73B2B34E1E83E5F9007A9CC6 /* Assets.xcassets */,
 				73B2B3501E83E5F9007A9CC6 /* LaunchScreen.storyboard */,
@@ -76,6 +78,7 @@
 		73B2B3591E83EB05007A9CC6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73B2B3491E83E5F9007A9CC6 /* ViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -95,6 +98,14 @@
 				73D4A4E91E84ADD400580578 /* ParkingSpot.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		73D4A4EB1E85F98A00580578 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				73D4A4EC1E85F9A400580578 /* LocationService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +185,7 @@
 				73D4A4E81E84ACF600580578 /* ShadowedLabel.swift in Sources */,
 				73B2B34A1E83E5F9007A9CC6 /* ViewController.swift in Sources */,
 				73D4A4EA1E84ADD400580578 /* ParkingSpot.swift in Sources */,
+				73D4A4ED1E85F9A400580578 /* LocationService.swift in Sources */,
 				73B2B3481E83E5F9007A9CC6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
