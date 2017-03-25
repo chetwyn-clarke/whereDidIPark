@@ -25,10 +25,13 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         self.locationManager.startUpdatingLocation()
     }
     
-    func locationManager(_ manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    @nonobjc func locationManager(_ manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         self.currentLocation = locationManager.location?.coordinate
     }
     
-
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        self.currentLocation = locationManager.location?.coordinate
+//    }
     
+
 }

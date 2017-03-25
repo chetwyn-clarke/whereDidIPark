@@ -27,6 +27,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func parkBtnPressed(_ sender: Any) {
+        
+        // When pressed, check to see if there is a parking postion already.  If there is, change the button to found car; if not, we create a parking spot.  Then center the map on user's location.
+        
+        if mapView.annotations.count == 1 {
+            
+            mapView.addAnnotation(parkedCarAnnotation!)
+            parkBtn.setImage(UIImage(named: "foundCar.png"), for: .normal)
+            
+        } else {
+            
+            mapView.removeAnnotations(mapView.annotations)
+            parkBtn.setImage(UIImage(named: "parkCar.png"), for: .normal)
+            
+        }
+        
+        centerMapOnLocation(location: LocationService.instance.locationManager.location!)
+        
     }
     
     func checkLocationAuthorizationStatus() {
@@ -48,6 +65,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: MKMapViewDelegate {
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? ParkingSpot {
             let identifier = "pin"
@@ -63,5 +81,27 @@ extension ViewController: MKMapViewDelegate {
             return nil
         }
     }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let location = view.annotation as! ParkingSpot
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+        location.mapItem(location: (parkedCarAnnotation?.coordinate)!).openInMaps(launchOptions: launchOptions)
+    }
+    
+}
+
+extension ViewController: CLLocationManagerDelegate {
+    
+    // When user location is updated, we will save the location to the LocationService, and instantiate ParkedCarAnnotation.
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        
+        centerMapOnLocation(location: CLLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude))
+        
+        let locationServiceCoordinate = LocationService.instance.locationManager.location!.coordinate
+        
+        parkedCarAnnotation = ParkingSpot(title: "My Parking Spot", locationName: "Tap the 'i' for GPS", coordinate: CLLocationCoordinate2D(latitude: locationServiceCoordinate.latitude, longitude: locationServiceCoordinate.longitude))
+    }
+    
 }
 
